@@ -18,7 +18,6 @@ pipeline {
         script {
            docker.image('mysql:5.7.12').withRun('-e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -p 3306:3306') { c ->
               sh 'whoami'
-              sh c
 
                 /* Wait until mysql service is up */
                 sh 'until mysql -uroot -h 127.0.0.1 -e "select version();"; do sleep 1; done'
