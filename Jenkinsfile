@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
            docker.image('mysql:5.7.12').withRun('-e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -p 3306:3306') { c ->
-              c.inside {
+              docker.image('mysql:5.7.12').inside {
                 sh 'whoami'
               }
               sh 'whoami'
