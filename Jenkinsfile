@@ -9,7 +9,7 @@ pipeline {
     stage('Prepare') {
       steps {
         sh 'echo "Hello World"'
-
+        sh 'whoami'
       }
     }
 
