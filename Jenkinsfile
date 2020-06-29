@@ -22,7 +22,7 @@ pipeline {
                  /* Wait until mysql service is up */
                   sh 'until mysql -uroot -h 127.0.0.1 -e "select version();"; do sleep 1; done'
                   /* Run some tests which require MySQL */
-                  sh 'mysql -uroot -h 127.0.0.1 -e "CREATE DATABASE lendit_test CHARACTER SET utf8 COLLATE utf8_general_ci;'
+                  sh 'mysql -uroot -h 127.0.0.1 -e "CREATE DATABASE lendit_test CHARACTER SET utf8 COLLATE utf8_general_ci;"'
               }
             }
         }
